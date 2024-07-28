@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Склад готовой продукции{% endblock %}
+
+{% block content %}
+<style>
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .button-group .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #74ebd5;
+        border: 2px solid #333;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin: 10px 0;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .button-group .btn:hover {
+        background-color: #acb6e5;
+        border-color: #555;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1>Склад готовой продукции</h1>
+    <div class="button-group">
+        <a href="{% url 'view_finished_goods_stock' %}" class="btn btn-primary">Просмотр остатков</a>
+        <a href="{% url 'receive_finished_goods' %}" class="btn btn-primary">Поступление за период</a>
+        <a href="{% url 'ship_finished_goods' %}" class="btn btn-primary">Отгрузка</a>
+    </div>
+</div>
+{% endblock %}
